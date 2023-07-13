@@ -24,14 +24,16 @@
 .loginbtn {
     border: 1px solid white;
     background-color: #8CC327;
-    width:80px;
-    height:50px;
+    width: 80px;
+    height: 50px;
     border-radius: 30px;
 }
+
 .loginbtn:hover {
-    color:#8CC327;
+    color: #8CC327;
     background-color: white;
 }
+
 .navbar {
     box-shadow: 0px 0px 20px #00000029;
     background: transparent linear-gradient(107deg, #3F6A0C 0%, #8CC327 100%) 0% 0% no-repeat padding-box;
@@ -43,4 +45,28 @@
     position: sticky;
     top: 0;
     z-index: 1020;
+}
+
+#exampleModalLabel {
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.submitbtn {
+    background: transparent linear-gradient(107deg, #3F6A0C 0%, #8CC327 100%) 0% 0% no-repeat padding-box;
+    color: white;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.error {
+    color: red;
+    font-weight: 500;
+    font-size: small;
+}
+.signup{
+    font-size: 13px;
+    text-decoration: none;
+     color:black;
 }

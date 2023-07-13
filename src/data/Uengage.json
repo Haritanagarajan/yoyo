@@ -1,0 +1,19 @@
+{
+    "login": [
+        {
+            "id": 0.11327739985660212,
+            "fname": "Harita",
+            "lname": "N",
+            "email": "30harita2002@gmail.com",
+            "pword": "Harita@123",
+            "login": 1
+        }
+    ],
+    "Adminlogin": [
+        {
+            "id":1,
+            "fname":"vasanth",
+            "pword":"Vasanth@123"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+
+#cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 350px;
+
+}
+
+.error-message {
+    color: #d8000c;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.container2 {
+    max-width: 800px;
+    /* Adjust the max-width as needed */
+    margin: 0 auto;
+    /* Center the form horizontally */
+    margin-top: 20px;
+    /* Add margin from the top to prevent overlapping with the navbar */
+    margin-bottom: 20px;
+    /* Add margin from the bottom to prevent overlapping with the footer */
+}
+
+.registration-form input,
+.registration-form select {
+    margin: 0;
+}
+.form-group{
+    padding:10px 10px 10px;
+}
