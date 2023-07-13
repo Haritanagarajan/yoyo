@@ -10,6 +10,7 @@ const Signup = () => {
     const [cpword, setcpword] = useState("");
     const [errors, seterrors] = useState({});
     const [login, setlogin] = useState();
+    const [utype, setutype] = useState("");
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -51,7 +52,9 @@ const Signup = () => {
             validationErrors.cpword = "Passwords do not match";
         }
 
-
+        if (utype === "") {
+            validationErrors.utype = "Required Field";
+        }
 
         if (Object.keys(validationErrors).length === 0) {
             const newUser = {
@@ -60,6 +63,7 @@ const Signup = () => {
                 lname,
                 email,
                 pword,
+                utype,
                 login
             };
 
@@ -81,6 +85,7 @@ const Signup = () => {
                         setpword("");
                         setcpword("");
                         setlogin("");
+                        setutype("");
                         console.log("Registration Successful");
                     } else {
                         throw new Error("Registration failed");
@@ -163,6 +168,29 @@ const Signup = () => {
                                 <div className="invalid-feedback">{errors.email}</div>
                             )}
                         </div>
+                        <div>
+                            <label className="text-center ps-5 ms-2">
+                                <input style={{ paddingTop: '10px' }}
+                                    type="radio"
+                                    value="User"
+                                    checked={utype === "User"}
+                                    onChange={(e) => setutype(e.target.value)}
+                                />
+                                User
+                            </label>
+                            <label className="text-center ps-5 ms-5 " style={{ display: 'horizontal', marginTop: '-52px' }}>
+                                <input
+                                    type="radio"
+                                    value="Admin"
+                                    checked={utype === "Admin"}
+                                    onChange={(e) => setutype(e.target.value)}
+                                />
+                                Admin
+                            </label>
+                        </div>
+                        {errors.userType && (
+                            <div className="invalid-feedback">{errors.utype}</div>
+                        )}
 
                         <div className="form-group">
                             <input

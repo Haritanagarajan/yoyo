@@ -52,34 +52,42 @@ export default function NavUengage() {
                                 }}
                                 validationSchema={validationSchema}
                                 onSubmit={(values) => {
-                                     fetch("http://localhost:4000/login")
+                                    fetch("http://localhost:4000/login")
                                         .then((response) => response.json())
                                         .then((data) => {
                                             const registeruser = data.find(
-                                                (user) => user.fname === values.Username && user.pword === values.password
+                                                (user) =>
+                                                    user.fname === values.Username &&
+                                                    user.pword === values.password
                                             );
                                             console.log(registeruser);
+
                                             if (registeruser) {
-                                                console.log("Login success");
-                                                const id = registeruser.id;
-                                                fetch(`http://localhost:4000/login/${id}`, {
-                                                    method: "PUT",
-                                                    headers: {
-                                                        "Content-Type": "application/json",
-                                                    },
-                                                    body: JSON.stringify({
-                                                        ...registeruser,
-                                                        login: 1,
-                                                    }),
-                                                })
-                                                    .then(() => {
-                                                        Auth.login(() => {
-                                                            navigate(from);
-                                                        });
+                                                if (registeruser.utype === "Admin") {
+                                                    console.log("Admin login");
+                                                    // Perform actions specific to admin user
+                                                } else {
+                                                    console.log("Login success");
+                                                    const id = registeruser.id;
+                                                    fetch(`http://localhost:4000/login/${id}`, {
+                                                        method: "PUT",
+                                                        headers: {
+                                                            "Content-Type": "application/json",
+                                                        },
+                                                        body: JSON.stringify({
+                                                            ...registeruser,
+                                                            login: 1,
+                                                        }),
                                                     })
-                                                    .catch((error) => {
-                                                        console.error("Error:", error);
-                                                    });
+                                                        .then(() => {
+                                                            Auth.login(() => {
+                                                                navigate(from);
+                                                            });
+                                                        })
+                                                        .catch((error) => {
+                                                            console.error("Error:", error);
+                                                        });
+                                                }
                                             } else {
                                                 console.log("Login failed");
                                             }
@@ -88,6 +96,7 @@ export default function NavUengage() {
                                             console.error("Error:", error);
                                         });
                                 }}
+
                             >
                                 <Form>
                                     <div className="formelements mb-3">

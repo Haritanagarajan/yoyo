@@ -1,19 +1,28 @@
 {
-    "login": [
-        {
-            "id": 0.11327739985660212,
-            "fname": "Harita",
-            "lname": "N",
-            "email": "30harita2002@gmail.com",
-            "pword": "Harita@123",
-            "login": 1
-        }
-    ],
-    "Adminlogin": [
-        {
-            "id":1,
-            "fname":"vasanth",
-            "pword":"Vasanth@123"
-        }
-    ]
+  "login": [
+    {
+      "id": 0.11327739985660212,
+      "fname": "Harita",
+      "lname": "N",
+      "email": "30harita2002@gmail.com",
+      "pword": "Harita@123",
+      "login": 1
+    },
+    {
+      "id": 0.007220317505756579,
+      "fname": "vasanth",
+      "lname": "N",
+      "email": "31vasanth2002@gmail.com",
+      "pword": "Vasanth@123",
+      "utype": "Admin",
+      "login": 1
+    }
+  ],
+  "Adminlogin": [
+    {
+      "id": 1,
+      "fname": "vasanth",
+      "pword": "Vasanth@123"
+    }
+  ]
 }
