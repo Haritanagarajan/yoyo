@@ -1,0 +1,46 @@
+.navbar-brand {
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.navbar-brand:hover {
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.nav-link {
+    color: white;
+    font-size: '15px';
+    font-weight: 400;
+}
+
+.nav-link:hover {
+    color: white;
+    font-weight: 400;
+}
+
+.loginbtn {
+    border: 1px solid white;
+    background-color: #8CC327;
+    width:80px;
+    height:50px;
+    border-radius: 30px;
+}
+.loginbtn:hover {
+    color:#8CC327;
+    background-color: white;
+}
+.navbar {
+    box-shadow: 0px 0px 20px #00000029;
+    background: transparent linear-gradient(107deg, #3F6A0C 0%, #8CC327 100%) 0% 0% no-repeat padding-box;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
