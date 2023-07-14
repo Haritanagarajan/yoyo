@@ -58,7 +58,6 @@ const Signup = () => {
 
         if (Object.keys(validationErrors).length === 0) {
             const newUser = {
-                id: Math.random(),
                 fname,
                 lname,
                 email,
@@ -222,12 +221,12 @@ const Signup = () => {
                             )}
                         </div>
 
-                        <button className="bg-black text-white" type="submit">
+                        <button className="register" type="submit">
                             Register
                         </button>
                         <p className="mt-3 text-center" style={{ fontSize: '13px', color: '#978F8F' }}>
                             Already have an account?{" "}
-                            <Link to="/HomeUengage" className="text-black w-25">
+                            <Link to="/Sigin" className="text-black w-25">
                                 Sign in
                             </Link>
                         </p>

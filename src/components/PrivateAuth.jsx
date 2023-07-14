@@ -8,7 +8,7 @@ const PrivateAuth = ({ children }) => {
     return Auth.isAuthenticated ? (
         children
     ) : (
-        <Navigate to="/HomeUengage" state={{ from: location }} />
+        <Navigate to="/Sigin" state={{ from: location }} />
     );
 };
 

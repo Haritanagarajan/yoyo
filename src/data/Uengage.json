@@ -1,28 +1,40 @@
 {
   "login": [
     {
-      "id": 0.11327739985660212,
+      "id": 1
+    },
+    {
+      "fname": "Ranita",
+      "lname": "N",
+      "email": "20bsit113tharitan@skacas.ac.in",
+      "pword": "Ranita@123",
+      "utype": "Admin",
+      "id": 2,
+      "login": 1
+    },
+    {
       "fname": "Harita",
       "lname": "N",
       "email": "30harita2002@gmail.com",
       "pword": "Harita@123",
-      "login": 1
-    },
-    {
-      "id": 0.007220317505756579,
-      "fname": "vasanth",
-      "lname": "N",
-      "email": "31vasanth2002@gmail.com",
-      "pword": "Vasanth@123",
-      "utype": "Admin",
-      "login": 1
+      "utype": "User",
+      "id": 3
     }
   ],
-  "Adminlogin": [
+  "task": [
     {
       "id": 1,
-      "fname": "vasanth",
-      "pword": "Vasanth@123"
+      "Assignment": "Explore about React Hooks",
+      "Startdate": "14/07/2023",
+      "Enddate": "15/07/2023",
+      "status": "Completed"
+    },
+    {
+      "id": 2,
+      "Assignment": "Explore about React Components",
+      "Startdate": "3/07/2023",
+      "Enddate": "11/07/2023",
+      "status": "not Completed"
     }
   ]
 }

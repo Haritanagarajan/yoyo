@@ -21,13 +21,9 @@
 
 .container2 {
     max-width: 800px;
-    /* Adjust the max-width as needed */
     margin: 0 auto;
-    /* Center the form horizontally */
     margin-top: 20px;
-    /* Add margin from the top to prevent overlapping with the navbar */
     margin-bottom: 20px;
-    /* Add margin from the bottom to prevent overlapping with the footer */
 }
 
 .registration-form input,
@@ -36,4 +32,9 @@
 }
 .form-group{
     padding:10px 10px 10px;
+}
+.register{
+    background-color: #8CC327;
+    color:white;
+    border:none;
 }

@@ -1,27 +1,23 @@
-import React from "react";
-import { Auth } from "./Auth";
-import { useNavigate } from "react-router-dom";
+import { useContext } from 'react';
+import { CreateContext } from './CreateContext';
 
 const ProtectedAuth = () => {
-    const navigate = useNavigate();
+  const { state, dispatch } = useContext(CreateContext);
+  const { user } = state;
 
-    return (
-        <div className="offset-3" style={{}}>
-            <p style={{ fontSize: 20 }}>
-                Cannot Access Highly Confidential
-            </p>
-            <button
-                className="btn"
-                style={{ backgroundColor:' #8CC327',color:'white' ,fontSize: 15 }}
-                onClick={() => {
-                    Auth.logout(() =>
-                        navigate("/HomeUengage", { state: { from: { pathname: "/" } } })
-                    );
-                }}>
-                Log out
-            </button>
-        </div>
-    );
+  const handleLogout = () => {
+    //logic for logout
+    dispatch({ type: 'LOGOUT' });
+  };
+
+  return (
+    <div>
+      {user.utpe === 'User' && (
+        {/* Render admin-specific content */}
+      )}
+      <button onClick={handleLogout}>Logout</button>
+    </div>
+  );
 };
 
 export default ProtectedAuth;
