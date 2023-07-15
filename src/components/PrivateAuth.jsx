@@ -12,4 +12,4 @@ const PrivateAuth = ({ children }) => {
     );
 };
 
-export default PrivateAuth;
+export default PrivateAuth

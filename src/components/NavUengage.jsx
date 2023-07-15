@@ -1,8 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Nav.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function NavUengage() {
+    const[login,setLogin]=useState('false');
+    const navigate=useNavigate();
+    
+    const handleLogout = () => {
+        setLogin(false);
+        fetch("http://localhost:4000/login?login_like=1")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                if (data.length > 0) {
+                    const id = data[0].id;
+                    fetch(`http://localhost:4000/login/${id}`, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            ...data[0],
+                            login: 0,
+                        }),
+                    })
+                        .then(() => {
+                            navigate("Sigin");
+                        })
+                        .catch((error) => {
+                            console.error("Error:", error);
+                        });
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    };
     return (
         <>
             <nav className="navbar navbar-expand-lg">
@@ -20,6 +54,7 @@ export default function NavUengage() {
                             <Link className="nav-link pe-3" to="WehireUengage">We're hiring!</Link>
                             <Link className="nav-link pe-3" to="Task">Task</Link>
                             <Link className="nav-link loginbtn" to="Sigin">Login</Link>
+                            <Link className="nav-link loginbtn" to="Sigin" onClick={handleLogout}>Logout</Link>
                         </div>
                     </div>
                 </div>

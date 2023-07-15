@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-// Taskdisplay component
 const Taskdisplay = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -23,6 +22,7 @@ const Taskdisplay = () => {
 
   return (
     <div>
+      <button onClick={handleGoBack} className='mt-5' style={{ backgroundColor: ' #8CC327', border: 'none', color: 'white', fontWeight: '600', width: '220px', height: '35px', borderRadius: '20px' }}>Back to task....</button>
       <div className="row bg-black text-white mt-5 text-center">
         <table style={{ margin: 'auto', borderCollapse: 'collapse' }}>
           <thead>
@@ -35,8 +35,8 @@ const Taskdisplay = () => {
           </thead>
           <tbody>
             <tr>
-              <td style={{ backgroundColor: 'black', padding: '30px' }} onClick={handleGoBack}>{taskindex.Startdate}</td>
-              <td style={{ backgroundColor: 'black',padding: '10px'  }}>{taskindex.Enddate}</td>
+              <td style={{ backgroundColor: 'black', padding: '30px' }}>{taskindex.Startdate}</td>
+              <td style={{ backgroundColor: 'black', padding: '10px' }}>{taskindex.Enddate}</td>
               <td style={{ backgroundColor: 'black', padding: '10px' }}>{taskindex.Assignment}</td>
               <td style={{ backgroundColor: 'black', padding: '10px' }}>{taskindex.status}</td>
             </tr>

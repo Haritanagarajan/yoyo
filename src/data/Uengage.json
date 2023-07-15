@@ -18,23 +18,24 @@
       "email": "30harita2002@gmail.com",
       "pword": "Harita@123",
       "utype": "User",
-      "id": 3
+      "id": 3,
+      "login": 0
     }
   ],
   "task": [
     {
-      "id": 1,
-      "Assignment": "Explore about React Hooks",
-      "Startdate": "14/07/2023",
-      "Enddate": "15/07/2023",
-      "status": "Completed"
+      "Assignment": "What is Hoc",
+      "Startdate": "2023-07-06",
+      "Enddate": "2023-07-28",
+      "status": "Notcompleted",
+      "id": 1
     },
     {
+      "Assignment": "What is class Components",
+      "Startdate": "2023-07-06",
+      "Enddate": "2023-07-13",
       "id": 2,
-      "Assignment": "Explore about React Components",
-      "Startdate": "3/07/2023",
-      "Enddate": "11/07/2023",
-      "status": "not Completed"
+      "status": "Completed"
     }
   ]
 }
