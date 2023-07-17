@@ -149,7 +149,7 @@ export default function Task() {
                             </div>
                         </Link>
                         <button
-                        style={{backgroundColor:' #8CC327',border:'none',color:'white',fontWeight:'600',width:'220px',height:'35px',borderRadius:'20px'}}
+                            style={{ backgroundColor: ' #8CC327', border: 'none', color: 'white', fontWeight: '600', width: '220px', height: '35px', borderRadius: '20px' }}
                             type="button"
                             className="text-center offset-5 mt-3"
                             onClick={() => showEditStatus(task.id)}

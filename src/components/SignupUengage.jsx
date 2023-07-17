@@ -179,15 +179,7 @@ const Signup = () => {
                                     />
                                 </label>
                             </noscript>
-                            {/* <label className="text-center ps-5 ms-5 " style={{ display: 'horizontal', marginTop: '-52px' }}>
-                                <input
-                                    type="radio"
-                                    value="Admin"
-                                    checked={utype === "Admin"}
-                                    onChange={(e) => setutype(e.target.value)}
-                                />
-                                Admin
-                            </label> */}
+                           
                         </div>
                         {errors.userType && (
                             <div className="invalid-feedback">{errors.role}</div>

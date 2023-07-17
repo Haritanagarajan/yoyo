@@ -1,32 +1,38 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Sigin.css';
+import { Auth } from './Auth';
 
-const Signin = () => {
+const AdminLogin = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3001/login')
+        fetch('http://localhost:3001/Admin')
             .then((response) => response.json())
-            .then((userData) => {
-                const user = userData.find(
-                    (user) => user.fname === username && user.pword === password
+            .then((admindata) => {
+                const adminfname = 'vasanthrathinam';
+                const adminpword = 'VASANTH@123';
+                const admin = admindata.find(
+                    (admin) =>
+                        admin.adminfname === adminfname && admin.adminpword === adminpword
                 );
 
-                if (user && user.role === 'user') {
-                    console.log('User Login success');
-                    fetch(`http://localhost:3001/login/${user.id}`, {
+                if (admin) {
+                    console.log('Admin login1');
+                    fetch(`http://localhost:3001/Admin/${admin.id}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify({ ...user, login: 1 }),
+                        body: JSON.stringify({ ...admin, login: 1 }),
                     })
                         .then(() => {
-                            navigate('/HomeUengage');
+                            Auth.login(() => {
+                                navigate('/ProductUengage');
+                            });
                         })
                         .catch((error) => {
                             console.error('Error:', error);
@@ -38,7 +44,7 @@ const Signin = () => {
     return (
         <div className="signinpage offset-4 mt-5">
             <form onSubmit={handleLogin}>
-                <h3 className="text-center">Login</h3>
+                <h3 className="text-center">Admin Login</h3>
                 <div className="formelements mb-3">
                     <label htmlFor="username" className="form-label">
                         Username
@@ -69,14 +75,11 @@ const Signin = () => {
                     Login
                 </button>
                 <Link className="signup offset-5 pt-3" to="/SignupUengage">
-                    New user? <br/>
-                </Link>
-                <Link className="signup offset-4 pt-3" to="/AdminLogin">
-                    Signup as Admin?
+                    Back to User? Signup
                 </Link>
             </form>
         </div>
     );
 };
 
-export default Signin;
+export default AdminLogin;

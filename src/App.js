@@ -15,6 +15,7 @@ import Task from './components/Task';
 import { UserProvider } from './components/CreateContext';
 import Taskdisplay from './components/TaskDisplay';
 // import ProtectedAuth from './components/ProtectedAuth';
+import AdminLogin from './components/AdminLogin';
 function App() {
   const [userData, setUserData] = useState(null);
 
@@ -34,6 +35,7 @@ function App() {
         <Routes>
           <Route exact path="/HomeUengage" element={<HomeUengage />} />
           <Route exact path="/PartnersUengage" element={<PartnersUengage />} />
+          <Route exact path="/AdminLogin" element={<AdminLogin />} />
           <Route
             exact
             path="/ProductUengage"

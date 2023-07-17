@@ -1,25 +1,22 @@
 {
   "login": [
     {
-      "id": 1
-    },
-    {
       "fname": "Harita",
       "lname": "N",
       "email": "30harita2003@gmail.com",
       "pword": "Harita@123",
       "role": "user",
       "id": 2,
-      "login": 1
+      "login": 0
     }
   ],
   "task": [
     {
       "Assignment": "What is Hoc",
-      "Startdate": "2023-07-05",
-      "Enddate": "2023-07-27",
-      "status": "Completed",
-      "id": 4
+      "Startdate": "2023-07-06",
+      "Enddate": "2023-07-19",
+      "status": "Assigned",
+      "id": 1
     }
   ],
   "Admin": [
