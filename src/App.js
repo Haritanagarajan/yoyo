@@ -51,18 +51,6 @@ function App() {
           <Route exact path="/Task" element={<Task />} />
           <Route exact path='/Taskdisplay/:id' element={<Taskdisplay />} />
           <Route exact path="/Sigin" element={<Sigin />} />
-          {/* Redirect to login if not logged in */}
-          {/* <Route
-            path="*"
-            element={
-              userData ? (
-                <Navigate to="/ProductUengage" />
-              ) : (
-                <Navigate to="/Sigin" />
-              )
-            }
-          /> */}
-          {/* <Route path="/ProtectedAuth" element={<ProtectedAuth />} /> */}
         </Routes>
       </div>
     </UserProvider>

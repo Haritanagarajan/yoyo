@@ -10,7 +10,7 @@
       "pword": "Ranita@123",
       "utype": "Admin",
       "id": 2,
-      "login": 1
+      "login": 0
     },
     {
       "fname": "Harita",
@@ -19,6 +19,15 @@
       "pword": "Harita@123",
       "utype": "User",
       "id": 3,
+      "login": 1
+    },
+    {
+      "fname": "vasanth",
+      "lname": "N",
+      "email": "31vasanth2002@gmail.com",
+      "pword": "vASANTH@123",
+      "utype": "User",
+      "id": 4,
       "login": 0
     }
   ],
@@ -35,7 +44,21 @@
       "Startdate": "2023-07-06",
       "Enddate": "2023-07-13",
       "id": 2,
-      "status": "Completed"
+      "status": "Notcompleted"
+    },
+    {
+      "Assignment": "What is React props",
+      "Startdate": "2023-07-05",
+      "Enddate": "2023-07-28",
+      "status": "",
+      "id": 3
+    },
+    {
+      "Assignment": "What is react",
+      "Startdate": "2023-07-12",
+      "Enddate": "2023-07-19",
+      "status": "Notcompleted",
+      "id": 4
     }
   ]
 }
