@@ -10,7 +10,7 @@ const Signup = () => {
     const [cpword, setcpword] = useState("");
     const [errors, seterrors] = useState({});
     const [login, setlogin] = useState();
-    const [utype, setutype] = useState("");
+    const [role, setrole] = useState("user");
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -52,7 +52,7 @@ const Signup = () => {
             validationErrors.cpword = "Passwords do not match";
         }
 
-        if (utype === "") {
+        if (role === "") {
             validationErrors.utype = "Required Field";
         }
 
@@ -62,7 +62,7 @@ const Signup = () => {
                 lname,
                 email,
                 pword,
-                utype,
+                role,
                 login
             };
 
@@ -84,7 +84,7 @@ const Signup = () => {
                         setpword("");
                         setcpword("");
                         setlogin("");
-                        setutype("");
+                        setrole("");
                         console.log("Registration Successful");
                     } else {
                         throw new Error("Registration failed");
@@ -168,16 +168,18 @@ const Signup = () => {
                             )}
                         </div>
                         <div>
-                            <label className="text-center ps-5 ms-2">
-                                <input style={{ paddingTop: '10px' }}
-                                    type="radio"
-                                    value="User"
-                                    checked={utype === "User"}
-                                    onChange={(e) => setutype(e.target.value)}
-                                />
-                                User
-                            </label>
-                            <label className="text-center ps-5 ms-5 " style={{ display: 'horizontal', marginTop: '-52px' }}>
+                            <noscript>
+                                <label className="text-center ps-5 ms-2">
+                                    <input style={{ paddingTop: '10px' }}
+                                        type="text"
+                                        value="user"
+                                        readonly
+                                        checked={role === "user"}
+                                        onChange={(e) => setrole(e.target.value)}
+                                    />
+                                </label>
+                            </noscript>
+                            {/* <label className="text-center ps-5 ms-5 " style={{ display: 'horizontal', marginTop: '-52px' }}>
                                 <input
                                     type="radio"
                                     value="Admin"
@@ -185,10 +187,10 @@ const Signup = () => {
                                     onChange={(e) => setutype(e.target.value)}
                                 />
                                 Admin
-                            </label>
+                            </label> */}
                         </div>
                         {errors.userType && (
-                            <div className="invalid-feedback">{errors.utype}</div>
+                            <div className="invalid-feedback">{errors.role}</div>
                         )}
 
                         <div className="form-group">

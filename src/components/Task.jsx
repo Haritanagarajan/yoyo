@@ -8,7 +8,7 @@ export default function Task() {
     const [id, setId] = useState();
 
     const fetchData = () => {
-        fetch('http://localhost:4000/task')
+        fetch('http://localhost:3001/task')
             .then((response) => response.json())
             .then((data) => {
                 setTaskIndex(data);
@@ -21,7 +21,7 @@ export default function Task() {
 
     function showEditStatus(id) {
         setId(id);
-        fetch(`http://localhost:4000/task/${id}`)
+        fetch(`http://localhost:3001/task/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 const currentStatus = data.status;
@@ -57,12 +57,12 @@ export default function Task() {
         const notCompletedRadio = document.getElementById('notCompleted');
         const status = completedRadio.checked ? completedRadio.value : notCompletedRadio.value;
 
-        fetch(`http://localhost:4000/task/${id}`)
+        fetch(`http://localhost:3001/task/${id}`)
             .then((response) => response.json())
             .then((task) => {
                 const updatedTask = { ...task, status: status };
 
-                fetch(`http://localhost:4000/task/${id}`, {
+                fetch(`http://localhost:3001/task/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

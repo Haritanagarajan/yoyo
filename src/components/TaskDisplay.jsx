@@ -7,7 +7,7 @@ const Taskdisplay = () => {
   const [taskindex, settaskindex] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/task/${id}`)
+    fetch(`http://localhost:3001/task/${id}`)
       .then((response) => response.json())
       .then((data) => settaskindex(data));
   }, [id]);

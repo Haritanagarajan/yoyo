@@ -8,7 +8,7 @@ export default function ProductUengage() {
   const [id, setId] = useState('');
 
   const fetchData = () => {
-    fetch('http://localhost:4000/task')
+    fetch('http://localhost:3001/task')
       .then((response) => response.json())
       .then((data) => {
         settaskindex(data);
@@ -63,7 +63,7 @@ export default function ProductUengage() {
     const Enddate = document.getElementById("Enddate").value;
     const status = document.getElementById("status").value;
 
-    fetch('http://localhost:4000/task', {
+    fetch('http://localhost:3001/task', {
       method: 'POST',
       body: JSON.stringify({
         Assignment: Assignment,
@@ -85,7 +85,7 @@ export default function ProductUengage() {
 
   function showUserEditBox(id) {
     setId(id);
-    fetch(`http://localhost:4000/task/${id}`)
+    fetch(`http://localhost:3001/task/${id}`)
       .then((response) => response.json())
       .then((data) => {
         settaskindex(data);
@@ -134,7 +134,7 @@ export default function ProductUengage() {
     const Enddate = document.getElementById("Enddate").value;
     const status = document.getElementById("status").value;
 
-    fetch(`http://localhost:4000/task/${id}`, {
+    fetch(`http://localhost:3001/task/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
         Assignment: Assignment,
@@ -155,7 +155,7 @@ export default function ProductUengage() {
   };
 
   const deletedata = (id) => {
-    fetch(`http://localhost:4000/task/${id}`, {
+    fetch(`http://localhost:3001/task/${id}`, {
       method: 'DELETE',
     })
       .then(res => res.json())

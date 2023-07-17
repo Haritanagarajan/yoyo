@@ -4,61 +4,31 @@
       "id": 1
     },
     {
-      "fname": "Ranita",
-      "lname": "N",
-      "email": "20bsit113tharitan@skacas.ac.in",
-      "pword": "Ranita@123",
-      "utype": "Admin",
-      "id": 2,
-      "login": 0
-    },
-    {
       "fname": "Harita",
       "lname": "N",
-      "email": "30harita2002@gmail.com",
+      "email": "30harita2003@gmail.com",
       "pword": "Harita@123",
-      "utype": "User",
-      "id": 3,
+      "role": "user",
+      "id": 2,
       "login": 1
-    },
-    {
-      "fname": "vasanth",
-      "lname": "N",
-      "email": "31vasanth2002@gmail.com",
-      "pword": "vASANTH@123",
-      "utype": "User",
-      "id": 4,
-      "login": 0
     }
   ],
   "task": [
     {
       "Assignment": "What is Hoc",
-      "Startdate": "2023-07-06",
-      "Enddate": "2023-07-28",
-      "status": "Notcompleted",
-      "id": 1
-    },
-    {
-      "Assignment": "What is class Components",
-      "Startdate": "2023-07-06",
-      "Enddate": "2023-07-13",
-      "id": 2,
-      "status": "Notcompleted"
-    },
-    {
-      "Assignment": "What is React props",
       "Startdate": "2023-07-05",
-      "Enddate": "2023-07-28",
-      "status": "",
-      "id": 3
-    },
-    {
-      "Assignment": "What is react",
-      "Startdate": "2023-07-12",
-      "Enddate": "2023-07-19",
-      "status": "Notcompleted",
+      "Enddate": "2023-07-27",
+      "status": "Completed",
       "id": 4
+    }
+  ],
+  "Admin": [
+    {
+      "id": 1,
+      "role": "admin",
+      "adminfname": "vasanthrathinam",
+      "adminpword": "VASANTH@123",
+      "login": 0
     }
   ]
 }

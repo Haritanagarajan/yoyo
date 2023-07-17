@@ -19,13 +19,13 @@ function App() {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:4000/login')
+    fetch('http://localhost:3001/Admin')
       .then(response => response.json())
       .then(data => setUserData(data))
       .catch(error => console.log(error));
   }, []);
 
-  const isAdmin = userData?.utype === 'Admin';
+  const isAdmin = userData?.role === 'admin';
 
   return (
     <UserProvider>

@@ -4,18 +4,46 @@ import '../styles/Nav.css';
 import { useNavigate } from 'react-router-dom';
 
 export default function NavUengage() {
-    const[login,setLogin]=useState('false');
-    const navigate=useNavigate();
-    
+    const [login, setLogin] = useState('false');
+    const navigate = useNavigate();
+
     const handleLogout = () => {
         setLogin(false);
-        fetch("http://localhost:4000/login?login_like=1")
+        fetch("http://localhost:3001/Admin?login_like=1")
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
                 if (data.length > 0) {
                     const id = data[0].id;
-                    fetch(`http://localhost:4000/login/${id}`, {
+                    fetch(`http://localhost:3001/Admin/${id}`, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            ...data[0],
+                            login: 0,
+                        }),
+                    })
+                        .then(() => {
+                            navigate("Sigin");
+                        })
+                        .catch((error) => {
+                            console.error("Error:", error);
+                        });
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+
+        fetch("http://localhost:3001/login?login_like=1")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                if (data.length > 0) {
+                    const id = data[0].id;
+                    fetch(`http://localhost:3001/login/${id}`, {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",
