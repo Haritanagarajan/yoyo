@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export default function NavUengage() {
     const [login, setLogin] = useState('false');
     const [username, setusername] = useState([]);
-    const [adminname, setadminname] = useState([]);
+    // const [adminname, setadminname] = useState([]);
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -70,23 +70,16 @@ export default function NavUengage() {
 
 
     const fetchData = () => {
-        if (username) {
-            fetch('http://localhost:3001/login?login_like=1')
-                .then((response) => response.json())
-                .then((data) => {
-                    setusername(data);
-                });
-        }
-        else{
-            fetch('http://localhost:3001/Admin?login_like=1')
-                .then((response) => response.json())
-                .then((data) => {
-                    setadminname(data);
-                });
-        }
+        fetch('http://localhost:3001/login?login_like=1')
+            .then((response) => response.json())
+            .then((data) => {
+                setusername(data);
+            });
     };
-    fetchData();
 
+    useEffect(() => {
+        fetchData();
+    }, []);
 
 
     return (
@@ -111,9 +104,6 @@ export default function NavUengage() {
                             {username.map((users) => (
                                 <p style={{ color: 'white', fontSize: '15px' }}>{users.fname}</p>
                             ))}
-                            {adminname.map((admins) => (
-                                <p style={{ color: 'white', fontSize: '15px' }}>{admins.adminfname}</p>
-                            ))} 
                         </div>
                     </div>
                 </div>

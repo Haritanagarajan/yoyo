@@ -27,6 +27,8 @@ const Taskdisplay = () => {
         <table style={{ margin: 'auto', borderCollapse: 'collapse' }}>
           <thead>
             <tr>
+              <th style={{ backgroundColor: ' #8CC327', color: 'white', padding: '10px' }}>useid</th>
+              <th style={{ backgroundColor: ' #8CC327', color: 'white', padding: '10px' }}>username</th>
               <th style={{ backgroundColor: ' #8CC327', color: 'white', padding: '10px' }}>Start Date</th>
               <th style={{ backgroundColor: ' #8CC327', color: 'white', padding: '10px' }}>End Date</th>
               <th style={{ backgroundColor: ' #8CC327', color: 'white', padding: '10px' }}>Assignment</th>
@@ -35,6 +37,8 @@ const Taskdisplay = () => {
           </thead>
           <tbody>
             <tr>
+              <td>{taskindex.userID}</td>
+              <td>{taskindex.username}</td>
               <td style={{ backgroundColor: 'black', padding: '30px' }}>{taskindex.Startdate}</td>
               <td style={{ backgroundColor: 'black', padding: '10px' }}>{taskindex.Enddate}</td>
               <td style={{ backgroundColor: 'black', padding: '10px' }}>{taskindex.Assignment}</td>

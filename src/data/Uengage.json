@@ -6,17 +6,73 @@
       "email": "30harita2003@gmail.com",
       "pword": "Harita@123",
       "role": "user",
+      "id": 1,
+      "login": 0
+    },
+    {
+      "fname": "Ranita",
+      "lname": "N",
+      "email": "31vasanth2002@gmail.com",
+      "pword": "Ranita@123",
+      "role": "user",
       "id": 2,
+      "login": 0
+    },
+    {
+      "fname": "Harish",
+      "lname": "M",
+      "email": "30harita2003@gmail.com",
+      "pword": "Harish@123",
+      "role": "user",
+      "id": 3,
+      "login": 0
+    },
+    {
+      "fname": "Harishmitha",
+      "lname": "M",
+      "email": "30harita2003@gmail.com",
+      "pword": "Harish@123",
+      "role": "user",
+      "id": 4,
       "login": 0
     }
   ],
   "task": [
     {
-      "Assignment": "What is Hoc",
+      "username": "Harita",
+      "userID": "1",
+      "Assignment": "what is hoc",
+      "Startdate": "2023-07-12",
+      "Enddate": "2023-07-20",
+      "status": "Notcompleted",
+      "id": 2
+    },
+    {
+      "username": "Ranita",
+      "userID": "2",
+      "Assignment": "What is react",
       "Startdate": "2023-07-06",
       "Enddate": "2023-07-19",
-      "status": "Assigned",
-      "id": 1
+      "status": "Notcompleted",
+      "id": 3
+    },
+    {
+      "username": "Harish",
+      "userID": "3",
+      "Assignment": "What is react params",
+      "Startdate": "2023-07-05",
+      "Enddate": "2023-07-28",
+      "status": "Completed",
+      "id": 4
+    },
+    {
+      "username": "Harishmitha",
+      "userID": "4",
+      "Assignment": "wqQWDQW3DR",
+      "Startdate": "2023-07-06",
+      "Enddate": "2023-07-28",
+      "status": "assigned",
+      "id": 6
     }
   ],
   "Admin": [
@@ -25,7 +81,7 @@
       "role": "admin",
       "adminfname": "vasanthrathinam",
       "adminpword": "VASANTH@123",
-      "login": 0
+      "login": 1
     }
   ]
 }
