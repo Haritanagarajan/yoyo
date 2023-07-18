@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Nav.css';
 import { useNavigate } from 'react-router-dom';
+import 'primeicons/primeicons.css';
 
 export default function NavUengage() {
     const [login, setLogin] = useState('false');
@@ -86,7 +87,8 @@ export default function NavUengage() {
         <div>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="#" >Yoyo</Link>
+                    {/* <Link className="navbar-brand" to="#" >Yoyo</Link> */}
+                    <Link><i className="pi pi-spin pi-prime" style={{ fontSize: '2rem',color:'pink' }}></i></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
