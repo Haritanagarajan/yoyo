@@ -1,7 +1,9 @@
+//import libraries
 import React, { useState } from "react";
 import "../styles/Signup.css";
 import { Link } from "react-router-dom";
 
+//signup page
 const Signup = () => {
     const [fname, setfname] = useState("");
     const [lname, setlname] = useState("");
@@ -179,7 +181,7 @@ const Signup = () => {
                                     />
                                 </label>
                             </noscript>
-                           
+
                         </div>
                         {errors.userType && (
                             <div className="invalid-feedback">{errors.role}</div>

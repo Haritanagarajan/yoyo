@@ -1,5 +1,4 @@
-
-
+//import libraries
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 
@@ -193,7 +192,6 @@ export default function ProductUengage() {
             '<div class="swal2-row">' +
             '<label for="status">Status</label>' +
             '<select id="status" class="swal2-input" value="status">' +
-            '<option value="in_progress">In Progress</option>' +
             '<option value="assigned">Assigned</option>' +
             '</select>' +
             '</div>' +

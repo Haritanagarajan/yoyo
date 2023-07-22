@@ -1,7 +1,9 @@
+//import libraries
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
+//task component for users
 export default function Task() {
     const [taskIndex, setTaskIndex] = useState([]);
     // const [sortOption, setSortOption] = useState('');
@@ -9,7 +11,7 @@ export default function Task() {
 
 
 
-
+    //only feches login id and task 9 matches
     const fetchData = () => {
         fetch('http://localhost:3001/login?login_like=1')
             .then((response) => response.json())
@@ -40,7 +42,7 @@ export default function Task() {
         fetchData();
     }, []);
 
-
+    //edit only the status as completed or not completed
     function showEditStatus(id) {
         setId(id);
         fetch(`http://localhost:3001/task/${id}`)
@@ -74,6 +76,7 @@ export default function Task() {
             });
     }
 
+    //edit only the status as completed or not completed
     const EditStatus = (id) => {
         const completedRadio = document.getElementById('completed');
         const notCompletedRadio = document.getElementById('notCompleted');
@@ -104,17 +107,16 @@ export default function Task() {
 
     return (
         <div>
-
             {taskIndex.map((task) => (
                 <div className="col-md-6" key={task.userID}>
                     <Link to={`/Taskdisplay/${task.id}`} style={{ textDecoration: 'none' }}>
                         <div className="cards bg-black text-white pt-5 pb-5 mt-4 offset-5 col-md-12">
                             <div className="card-body text-center">{task.Assignment}</div>
-                            <h6>{task.userID}</h6>
-                            <h6>{task.username}</h6>
-                            <h6>{task.Startdate}</h6>
-                            <h6>{task.Enddate}</h6>
-                            <h6>{task.status}</h6>
+                            {/* <h6>{task.userID}</h6> */}
+                            <h6 className='text-center'>Assigned for:{task.username}</h6>
+                            {/* <h6>{task.Startdate}</h6> */}
+                            {/* <h6>{task.Enddate}</h6> */}
+                            {/* <h6>{task.status}</h6> */}
                         </div>
                     </Link>
                     <button

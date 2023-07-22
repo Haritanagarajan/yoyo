@@ -1,6 +1,8 @@
+//import libraries
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
+//isplaying the unique task details
 const Taskdisplay = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -16,6 +18,7 @@ const Taskdisplay = () => {
     return <div>Loading...</div>;
   }
 
+  //go the the task page 
   const handleGoBack = () => {
     navigate('/Task');
   };

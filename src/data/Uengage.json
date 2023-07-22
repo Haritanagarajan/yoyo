@@ -25,7 +25,7 @@
       "pword": "Harish@123",
       "role": "user",
       "id": 3,
-      "login": 0
+      "login": 1
     },
     {
       "fname": "Harishmitha",
@@ -39,40 +39,22 @@
   ],
   "task": [
     {
-      "username": "Harita",
-      "userID": "1",
-      "Assignment": "what is hoc",
-      "Startdate": "2023-07-12",
+      "username": "Harish",
+      "userID": "3",
+      "Assignment": "What is Hoc",
+      "Startdate": "2023-07-06",
       "Enddate": "2023-07-20",
       "status": "Notcompleted",
-      "id": 2
+      "id": 1
     },
     {
       "username": "Ranita",
       "userID": "2",
-      "Assignment": "What is react",
-      "Startdate": "2023-07-06",
-      "Enddate": "2023-07-19",
-      "status": "Notcompleted",
-      "id": 3
-    },
-    {
-      "username": "Harish",
-      "userID": "3",
-      "Assignment": "What is react params",
+      "Assignment": "WHAT IS REACT",
       "Startdate": "2023-07-05",
-      "Enddate": "2023-07-28",
-      "status": "Completed",
-      "id": 4
-    },
-    {
-      "username": "Harishmitha",
-      "userID": "4",
-      "Assignment": "wqQWDQW3DR",
-      "Startdate": "2023-07-06",
-      "Enddate": "2023-07-28",
+      "Enddate": "2023-07-19",
       "status": "assigned",
-      "id": 6
+      "id": 2
     }
   ],
   "Admin": [
@@ -81,7 +63,7 @@
       "role": "admin",
       "adminfname": "vasanthrathinam",
       "adminpword": "VASANTH@123",
-      "login": 1
+      "login": 0
     }
   ]
 }

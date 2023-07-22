@@ -1,9 +1,12 @@
+//import libraries
 import React, { createContext, useReducer } from 'react';
 const initialState = {
   user: null,
 };
+//context
 const CreateContext = createContext(initialState);
 
+//login means auth is true 
 const userReducer = (state, action) => {
   switch (action.type) {
     case 'LOGIN':
@@ -14,6 +17,7 @@ const userReducer = (state, action) => {
           isAuthenticated: true,
         }
       };
+    //if not it becomes null
     case 'LOGOUT':
       return {
         ...state,
@@ -24,6 +28,7 @@ const userReducer = (state, action) => {
   }
 };
 
+//contsins all child routes
 const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, initialState);
 
