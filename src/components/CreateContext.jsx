@@ -1,5 +1,5 @@
 //import libraries
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useState } from 'react';
 const initialState = {
   user: null,
 };
@@ -31,7 +31,6 @@ const userReducer = (state, action) => {
 //contsins all child routes
 const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, initialState);
-
   return (
     <CreateContext.Provider value={{ state, dispatch }}>
       {children}

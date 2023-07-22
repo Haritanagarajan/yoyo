@@ -1,7 +1,7 @@
 //import libraries
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
-
+import '../styles/ProductUengage.css'
 export default function ProductUengage() {
   const [taskindex, setTaskIndex] = useState([]);
   const [sortOption, setSortOption] = useState('');
@@ -83,7 +83,6 @@ export default function ProductUengage() {
             '<div class="swal2-row">' +
             '<label for="status">Status</label>' +
             '<select id="status" class="swal2-input">' +
-            '<option value="in_progress">In Progress</option>' +
             '<option value="assigned">Assigned</option>' +
             '</select>' +
             '</div>' +
@@ -160,6 +159,9 @@ export default function ProductUengage() {
           title: "Edit user",
           customClass: {
             popup: "red-popup",
+            content: "red-popup",
+            title: "red-popup",
+            actions: "red-popup",
           },
           html:
             '<form id="myform" class="is-validated">' +
@@ -337,8 +339,8 @@ export default function ProductUengage() {
                   <td style={{ backgroundColor: 'black', padding: '10px' }}>{task.Enddate}</td>
                   <td style={{ backgroundColor: 'black', padding: '10px' }}>{task.Assignment}</td>
                   <td style={{ backgroundColor: 'black', padding: '10px' }}>{task.status}</td>
-                  <td><button bg-white style={{ backgroundColor: ' #8CC327', border: 'none', color: 'white', fontWeight: '600', width: '60px', height: '35px', borderRadius: '20px' }} onClick={() => deletedata(task.id)}><i class="fa-sharp fa-solid fa-trash"></i></button></td>
                   <td><button bg-white style={{ backgroundColor: ' #8CC327', border: 'none', color: 'white', fontWeight: '600', width: '60px', height: '35px', borderRadius: '20px' }} onClick={() => showUserEditBox(task.id)}><i class="fa-solid fa-pen-to-square"></i></button> </td>
+                  <td><button bg-white style={{ backgroundColor: ' #8CC327', border: 'none', color: 'white', fontWeight: '600', width: '60px', height: '35px', borderRadius: '20px' }} onClick={() => deletedata(task.id)}><i class="fa-sharp fa-solid fa-trash"></i></button></td>
                 </tr>
               );
             })}

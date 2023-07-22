@@ -25,7 +25,7 @@
       "pword": "Harish@123",
       "role": "user",
       "id": 3,
-      "login": 1
+      "login": 0
     },
     {
       "fname": "Harishmitha",
@@ -44,16 +44,16 @@
       "Assignment": "What is Hoc",
       "Startdate": "2023-07-06",
       "Enddate": "2023-07-20",
-      "status": "Notcompleted",
+      "status": "Completed",
       "id": 1
     },
     {
-      "username": "Ranita",
-      "userID": "2",
-      "Assignment": "WHAT IS REACT",
-      "Startdate": "2023-07-05",
-      "Enddate": "2023-07-19",
-      "status": "assigned",
+      "username": "Harish",
+      "userID": "3",
+      "Assignment": "What is react",
+      "Startdate": "2023-07-06",
+      "Enddate": "2023-07-21",
+      "status": "Notcompleted",
       "id": 2
     }
   ],
@@ -63,7 +63,7 @@
       "role": "admin",
       "adminfname": "vasanthrathinam",
       "adminpword": "VASANTH@123",
-      "login": 0
+      "login": 1
     }
   ]
 }

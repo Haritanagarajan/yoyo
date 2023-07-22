@@ -17,17 +17,19 @@ import Taskdisplay from './components/TaskDisplay';
 // import ProtectedAuth from './components/ProtectedAuth';
 import AdminLogin from './components/AdminLogin';
 function App() {
-  const [userData, setUserData] = useState(null);
-
+  const [adminData, setadminData] = useState(null);
+  
   useEffect(() => {
     fetch('http://localhost:3001/Admin')
       .then(response => response.json())
-      .then(data => setUserData(data))
+      .then(data => setadminData(data))
       .catch(error => console.log(error));
   }, []);
 
-  const isAdmin = userData?.role === 'admin';
+  const isAdmin = adminData?.role === 'admin';
 
+  
+ 
   return (
     <UserProvider>
       <div>

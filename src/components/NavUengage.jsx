@@ -7,14 +7,16 @@ import 'primeicons/primeicons.css';
 
 //nav component
 export default function NavUengage() {
-    const [login, setLogin] = useState('false');
+    const [display, setdisplay] = useState('none');
+    const [admindisplay, setadmindisplay] = useState('none');
+    const [login, setLogin] = useState(false);
+    const [adminlogin, setadminLogin] = useState(false);
     const [username, setusername] = useState([]);
-    const [visible, setVisible] = useState(false);
     const navigate = useNavigate();
 
     //invoked when logout btn is clicked
     const handleLogout = () => {
-        setLogin(false);
+        // setLogin(false);
         //checks for any logi is 1 in admin and makes as login 0
         fetch("http://localhost:3001/Admin?login_like=1")
             .then((response) => response.json())
@@ -31,6 +33,7 @@ export default function NavUengage() {
                             ...data[0],
                             login: 0,
                         }),
+
                     })
                         .then(() => {
                             navigate("Sigin");
@@ -43,6 +46,7 @@ export default function NavUengage() {
             .catch((error) => {
                 console.error("Error:", error);
             });
+
         //checks for any logi is 1 in user and makes as login 0
         fetch("http://localhost:3001/login?login_like=1")
             .then((response) => response.json())
@@ -74,16 +78,24 @@ export default function NavUengage() {
     };
 
     //for making visible which user is logging in
-    const fetchData = () => {
+    const fetchData1 = () => {
         fetch('http://localhost:3001/login?login_like=1')
             .then((response) => response.json())
             .then((data) => {
                 setusername(data);
+                setLogin(data.length > 0);
+                setdisplay('block');
+            });
+        fetch('http://localhost:3001/admin?login_like=1')
+            .then((response) => response.json())
+            .then((data) => {
+                setadminLogin(data.length > 0);
+                setadmindisplay('block');
             });
     };
 
     useEffect(() => {
-        fetchData();
+        fetchData1();
     }, []);
 
 
@@ -98,11 +110,16 @@ export default function NavUengage() {
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav offset-4" style={{ fontSize: '20px', fontWeight: 'bold' }}>
                             <Link className="nav-link ps-4" aria-current="page" to="HomeUengage">Home</Link>
-                            <Link className="nav-link pe-4" to="ProductUengage">Tasks</Link>
+                            {adminlogin ? (
+                                <Link className="nav-link pe-4" to="ProductUengage">Tasks</Link>
+                            ) : null}
+
                             <Link className="nav-link pe-4" to="PartnersUengage">Partners</Link>
                             <Link className="nav-link pe-4" to="SpotlightUengage">Spotlight</Link>
                             <Link className="nav-link pe-3" to="WehireUengage">Yayeee!</Link>
-                            <Link className="nav-link pe-3" to="Task">Progress</Link>
+                            {login ? (
+                                <Link className="nav-link pe-3" to="Task">Progress</Link>
+                            ) : null}
                             <Link className="nav-link loginbtn" to="Sigin"><i class="fa-solid fa-right-to-bracket"></i></Link>
                             <Link className="nav-link loginbtn" to="Sigin" onClick={handleLogout}><i class="fa-solid fa-right-from-bracket"></i></Link>
                             <p style={{ color: 'white', fontSize: '15px' }} className='text-center'>Welcome to Yoyo!.....</p>

@@ -1,0 +1,20 @@
+.red-popup .swal2-content {
+    color: black;
+}
+
+.red-popup .swal2-title {
+    color: rgb(29, 73, 24);
+}
+
+.red-popup .swal2-actions button {
+    color: red;
+}
+
+.swal2-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid BLACK;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
